@@ -5,6 +5,7 @@ import auth from "./middleWares/auth.js";
 import helloController from "./controllers/helloController.js";
 import sessionsController from "./controllers/sessionsController.js";
 import userController from "./controllers/userController.js";
+import iniciativesController from "./controllers/iniciativesController.js";
 
 const routes = Router()
 
@@ -14,6 +15,11 @@ routes.post('/session', sessionsController.create)
 routes.post('/users', userController.create)
 
 routes.use(auth)
+
+routes.get('/iniciatives', iniciativesController.list)
+routes.get('/iniciatives/:id', iniciativesController.show)
+routes.post('/iniciatives', iniciativesController.create)
+routes.delete('/iniciatives/:id', iniciativesController.destroy)
 
 routes.get('/users', userController.index)
 routes.get('/users/:id', userController.show)
