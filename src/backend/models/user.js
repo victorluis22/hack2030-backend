@@ -19,6 +19,18 @@ const userSchema = new mongoose.Schema(
         address: {
             type: String,
             required: true
+        },
+        lat: {
+            type: Number,
+            required: true
+        },
+        lon: {
+            type: Number,
+            required: true
+        },
+        points: {
+            type: Number,
+            required: false
         }
     },
     {

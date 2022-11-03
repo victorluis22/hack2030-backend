@@ -38,6 +38,14 @@ const iniciativesSchema = new mongoose.Schema(
         mainOds: {
             type: Number,
             required: true
+        },
+        lat: {
+            type: Number,
+            required: true
+        },
+        lon: {
+            type: Number,
+            required: true
         }
     },
     {
