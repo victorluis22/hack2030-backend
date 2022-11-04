@@ -50,10 +50,10 @@ class userController {
         }
     }
 
-    async update(req, res) {
+    async updatePoints(req, res) {
         try {
             const { id } = req.params
-            const { email, password } = req.body
+            const { points } = req.body
 
             const user = await User.findById(id)
 
@@ -61,9 +61,7 @@ class userController {
                 return res.status(404).json()
             }
 
-            const encryptedPassword = await createPasswordHash(password)
-
-            await user.updateOne({email, password: encryptedPassword})
+            await user.updateOne({points})
 
             return res.status(200).json()
         } catch (error) {

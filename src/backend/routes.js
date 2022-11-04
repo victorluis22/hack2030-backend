@@ -23,7 +23,7 @@ routes.delete('/iniciatives/:id', iniciativesController.destroy)
 
 routes.get('/users', userController.index)
 routes.get('/users/:id', userController.show)
-routes.put('/users/:id', userController.update)
+routes.put('/users/:id', userController.updatePoints)
 routes.delete('/users/:id', userController.destroy)
 
 
