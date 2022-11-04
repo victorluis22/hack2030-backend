@@ -3,7 +3,7 @@ import Iniciatives from '../models/iniciatives.js';
 class iniciativesController {
     async list(req, res) {
         try {
-            const iniciatives = await Iniciatives.find().sort({points: 1})
+            const iniciatives = await Iniciatives.find().sort({points: -1})
             return res.json(iniciatives)
         } catch (error) {
             console.error(error);

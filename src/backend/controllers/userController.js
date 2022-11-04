@@ -5,7 +5,7 @@ import { createPasswordHash } from '../services/auth.js'
 class userController {
     async index(req, res) {
         try {
-            const users = await User.find().sort({points: 1})
+            const users = await User.find().sort({points: -1})
             return res.json(users)
         } catch (error) {
             console.error(error);
