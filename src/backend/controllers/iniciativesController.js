@@ -30,7 +30,7 @@ class iniciativesController {
 
     async create(req, res) {
         try {
-            const { name, owner, address, emailOwner, actingArea, impact, type, points, mainOds } = req.body
+            const { name, owner, address, emailOwner, actingArea, impact, type, points, mainOds, lat, lon } = req.body
             const iniciative = await Iniciatives.findOne({ name, emailOwner })
 
             if(iniciative){
@@ -39,7 +39,7 @@ class iniciativesController {
 
             const newIniciative = await Iniciatives.create({  
                 name, owner, address, emailOwner, actingArea, impact, type,
-                points, mainOds
+                points, mainOds, lat, lon
             })
 
             return res.status(201).json(newIniciative)
