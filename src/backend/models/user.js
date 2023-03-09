@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        cep:{
+            type: String,
+            required: true
+        },
         lat: {
             type: Number,
             required: true

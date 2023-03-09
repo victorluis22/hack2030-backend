@@ -32,7 +32,7 @@ class userController {
 
     async create(req, res) {
         try {
-            const { name, email, password, address, lat, lon, points } = req.body
+            const { name, email, password, address, cep, lat, lon, points } = req.body
             const user = await User.findOne({ email })
 
             if(user){
@@ -41,7 +41,7 @@ class userController {
 
             const encryptedPassword = await createPasswordHash(password)
 
-            const newUser = await User.create({  name, email, password: encryptedPassword, address, lat, lon, points})
+            const newUser = await User.create({  name, email, password: encryptedPassword, address, cep, lat, lon, points})
 
             return res.status(201).json(newUser)
         } catch (error) {

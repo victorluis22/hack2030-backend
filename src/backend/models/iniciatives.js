@@ -15,6 +15,10 @@ const iniciativesSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        cep: {
+            type: String,
+            required: true
+        },
         emailOwner: {
             type: String,
             required: true
